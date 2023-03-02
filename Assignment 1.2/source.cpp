@@ -1,5 +1,6 @@
 #include<iostream>
 #include"Circle.h"
+#include"Rectangle.h"
 using namespace std;
 
 int main()
@@ -11,5 +12,9 @@ int main()
 	}
 	cout<<"The sum of the circles is "<<endl;
 	cout<<t<<endl;
+	
+	Rectangle b(3, 9);
+	b.display();
+	
 	return 0;
 }

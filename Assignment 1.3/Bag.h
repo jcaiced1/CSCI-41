@@ -22,7 +22,8 @@ public:
 	int getMin();
 	int getSum();
 	void sortA();
-	
+	int getLast();
+	bool containsOdd();
 };
 
 //implementation
@@ -139,5 +140,31 @@ void Bag::sortA(){
 		}
 	}
 }
+
+int Bag::getLast()
+{
+	if(itemCount==0){
+		exit(1);
+	}
+	int t =items[0];
+	for(int i=0; i<itemCount;i++){
+		t=items[i];
+	}
+		return t;
+		}
+bool Bag::containsOdd()
+{
+	if(itemCount==0){
+		exit(1);
+	}
+	for (int i=0; i<itemCount; i++){
+		if(items[i]%2!=0){
+			return true;
+		}
+}
+return false;
+}
+
+
 
 #endif
