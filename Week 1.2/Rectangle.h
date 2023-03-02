@@ -1,5 +1,4 @@
 #include<iostream>
-#include<fstream>
 using namespace std;
 
 class Rectangle
@@ -13,7 +12,6 @@ public:
 	void setLength(double l);
 	void setWidth(double w);
 	void display();					//class definition 
-	friend ostream &operator<<(ostream &out,Rectangle rec);
 	friend Rectangle operator+(Rectangle a, Rectangle b); //grants access to the private data (its been used to make the operator overloading work
 	friend Rectangle operator*(Rectangle a, Rectangle b);
 };
@@ -55,18 +53,4 @@ Rectangle operator*(Rectangle a, Rectangle b)  //operator overloading
 	c.setLength(a.length * b.length);
 	c.setWidth(a.width * b.width);
 	return c;
-}
-ostream &operator<<(ostream &out,Rectangle rec)
-{
-	out<<"The length is "<<rec.length<<endl;
-	out<<"The width is "<<rec.width<<endl;
-	return out;
-}
-
-ostream &operator<<(ostream &out,Info inf)
-{
-	out<<"The last Name is "<<inf.firstName<<endl;
-	out<<"The first Name is "<<inf.lastName<<endl;
-	out<<"The ID is "<<inf.iD<<endl;
-	return out;
 }
